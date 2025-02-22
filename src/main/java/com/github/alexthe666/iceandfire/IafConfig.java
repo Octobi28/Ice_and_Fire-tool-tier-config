@@ -141,6 +141,7 @@ public class IafConfig {
     public static boolean dragonWeaponLightningAbility = true;
     public static int villagerHouseWeight = 5;
     public static boolean allowAttributeOverriding = true;
+    public static float dragonsteelTierBaseDamage;
 
     public static void bakeClient(final ModConfig config) {
         try {
@@ -285,6 +286,7 @@ public class IafConfig {
             villagerHouseWeight = ConfigHolder.SERVER.villagerHouseWeight.get();
             allowAttributeOverriding = ConfigHolder.SERVER.allowAttributeOverriding.get();
             pathfindingDebug = ConfigHolder.SERVER.pathfindingDebug.get();
+            dragonsteelTierBaseDamage = Float.parseFloat((String.valueOf(ConfigHolder.SERVER.dragonsteelTierBaseDamage.get())));
         } catch (Exception e) {
             IceAndFire.LOGGER.warn("An exception was caused trying to load the common config for Ice and Fire.");
             e.printStackTrace();

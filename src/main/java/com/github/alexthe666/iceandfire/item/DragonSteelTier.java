@@ -1,5 +1,6 @@
 package com.github.alexthe666.iceandfire.item;
 
+import com.github.alexthe666.iceandfire.IafConfig;
 import com.github.alexthe666.iceandfire.IceAndFire;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
@@ -25,7 +26,7 @@ public class DragonSteelTier {
 
     private static Tier createTierWithRepairItem(Supplier<Ingredient> ingredient, String name) {
         return TierSortingRegistry.registerTier(
-            new ForgeTier(4, 8000, 10, 21, 10, DRAGONSTEEL_TIER_TAG, ingredient),
+            new ForgeTier(4, 8000, 10, IafConfig.dragonsteelTierBaseDamage, 10, DRAGONSTEEL_TIER_TAG, ingredient),
             new ResourceLocation(IceAndFire.MODID, name),
             List.of(Tiers.NETHERITE), List.of());
     }

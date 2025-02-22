@@ -135,6 +135,7 @@ public class ServerConfig {
     public final ForgeConfigSpec.BooleanValue dragonWeaponLightningAbility;
     public ForgeConfigSpec.IntValue villagerHouseWeight;
     public ForgeConfigSpec.BooleanValue allowAttributeOverriding;
+    public final ForgeConfigSpec.DoubleValue dragonsteelTierBaseDamage;
 
     public ServerConfig(final ForgeConfigSpec.Builder builder) {
         builder.push("Generation");
@@ -309,6 +310,7 @@ public class ServerConfig {
         builder.pop();
         builder.push("Items");
         this.dragonsteelBaseDamage = buildDouble(builder, "Dragonsteel Sword Base Attack Strength", "all", 25, 5, Integer.MAX_VALUE, "Default attack strength of a dragonsteel sword.");
+        this.dragonsteelTierBaseDamage = buildDouble(builder, "Dragonsteel Tier Weapons Base Damage", "all", 21, 5, Integer.MAX_VALUE, "Default damage of all dragonsteel weapons.\nMUST BE EXACTLY 4 LESS THAN THE ABOVE VALUE");
         this.dragonsteelBaseArmor = buildInt(builder, "Dragonsteel Base Armor", "all", 12, 7, Integer.MAX_VALUE, "Default armor value of dragonsteel chestplate.");
         this.dragonsteelBaseArmorToughness = buildDouble(builder, "Dragonsteel Base Armor Toughness", "all", 6, 0, Double.MAX_VALUE, "Default armor toughness value of dragonsteel.");
         this.dragonsteelBaseDurability = buildInt(builder, "Dragonsteel Base Durability", "all", 8000, 1, Integer.MAX_VALUE, "Default durability value of dragonsteel tools.");
